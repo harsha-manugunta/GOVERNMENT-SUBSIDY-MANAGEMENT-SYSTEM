@@ -1,0 +1,51 @@
+import requests
+from bs4 import BeautifulSoup
+import json as json
+
+# Scrape market price per quintal for dry arecanut
+url1 = "https://www.commodityonline.com/mandiprices/coconut"
+response1 = requests.get(url1)
+soup1 = BeautifulSoup(response1.content, 'html.parser')
+
+coconut_price = {}
+
+arr=soup1.select('table.main-table2>tbody>tr')
+for row in soup1.select('table.main-table2>tbody>tr'):
+      
+      columns = row.select('td')
+      state = columns[3].text.strip()
+      price = columns[8].text.strip().replace(',', '')
+      coconut_price[state] = price
+
+
+print("Dry coconut Market Price:")
+print(coconut_price)
+c=json.dumps(coconut_price)
+print(c)
+fp = open('coconut1.json', 'w')
+
+fp.write(c)
+fp.close()
+
+
+# Scrape market price per quintal for dry coconut
+url2 = "https://www.commodityonline.com/mandiprices/arecanut-betelnutsupari"
+response2 = requests.get(url2)
+soup2 = BeautifulSoup(response2.content, 'html.parser')
+
+areca_price = {}
+
+for row in soup2.select('table.main-table2>tbody>tr'):
+    columns = row.select('td')
+    state = columns[3].text.strip()
+    price = columns[8].text.strip().replace(',', '')
+    areca_price[state] = price
+
+print("Dry arecanut Market Price:")
+print(areca_price)
+a=json.dumps(areca_price)
+print(a)
+fp = open('areca1.json', 'w')
+
+fp.write(a)
+fp.close()
