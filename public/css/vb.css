@@ -1,0 +1,76 @@
+body{
+    background-color: #242526;
+}
+.heading h1{
+    padding-left: 35%;
+    color: #fff;
+    padding-top: 50px;
+    font-size: 40px;
+}
+
+form label{
+    padding-right: 75px;
+    color: #fff;
+    padding: 50%;
+}
+.btn button {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: rgb(31,13,152);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    position: center;
+
+}
+.btn1 button {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: rgb(31,13,152);
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+   
+
+}
+.image img {
+    width: 100%;
+    height: 20%;
+
+}
+
+.centered0{
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -200px;
+  margin-left: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 45px 45px;
+}
+
+.centered{
+    position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: -200px;
+}
+
+.centered2{
+    position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 200px;
+}
+
+.container .heading strong{
+    color: green;
+}
