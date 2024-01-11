@@ -1,0 +1,52 @@
+doctype html
+html(lang='en', dir='ltr')
+  head
+    meta(charset='UTF-8')
+    // -<title> Responsive Registration Form | CodingLab </title>-
+    link(rel='stylesheet', href='/css/shipping.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    .heading
+      span SHIPPING 
+      |  DETAILS
+    .container
+      .title Shipping Details
+      .content
+        form(action='#')
+          .user-details
+            .input-box
+              span.details Dealer Name
+              input(type='text', placeholder='Enter your First name', required='' value=`${d.to.name}`)
+            .input-box
+              span.details Farmer name
+              input(type='text', placeholder='Enter your Last name', required='' value=`${d.from.name}`)
+            .input-box
+              span.details Dealer phone
+              input(type='text', placeholder='Enter your email', required='' value=`${d.to.phone}`)
+            .input-box
+              span.details Farmer phone
+              input(type='text', placeholder='Enter your number', required='' value=`${d.from.phone}`)
+            .input-box
+              span.details Street,Landmark,Region
+              input(type='text', placeholder='Enter your address', required='')
+            .input-box
+              span.details Pin Code
+              input(type='text', placeholder='Enter your Pin code', required='')
+          .gender-details
+            input#dot-1(type='radio', name='gender')
+            input#dot-2(type='radio', name='gender')
+            input#dot-3(type='radio', name='gender')
+            span.gender-title Shipping Option
+            .category
+              label(for='dot-1')
+                span.dot.one
+                span.gender Instant Delivery(3 to 5 days)
+              label(for='dot-2')
+                span.dot.two
+                span.gender Normal Delivery(10 to 12 days)
+          .button
+            a(href=`/payment/${dealId}`) Pay
+    script.
+      function myFunction() {
+    //-   location.replace("payment.pug")
+      }

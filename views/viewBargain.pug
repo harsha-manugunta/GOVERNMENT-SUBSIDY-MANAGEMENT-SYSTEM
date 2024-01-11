@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/css/vb.css')
+    title Document
+  body
+    .container
+      .heading
+        h1
+          strong BARGAIN
+            AGREEMENT
+      | &#x9;
+      title Pop-up Box type | Alert Box
+      | &#x9;
+      style.
+        h1{
+        color:green;
+        }
+      | &#x9;
+      .container2
+        .image
+          img(src='https://cdn.fastmarkets.com/dims4/default/e895f17/2147483647/strip/true/crop/4288x1847+0+500/resize/817x352!/quality/90/?url=https%3A%2F%2Ffastmarkets-production-web.s3.amazonaws.com%2Fbrightspot%2F51%2Fec%2Fcc0445a54be790029506730ce5b7%2Fgettyimages-175602101.jpg')
+        |  
+    each d in Deals
+            if((d.from._id== idUser || d.to._id== idUser)&& d.bargain.bargainedAmount>0)
+                .box.centered0
+                    h1=`Framer Name :- ${d.from.name}`
+                    h1=`Dealer Name :- ${d.to.name}`
+                    h1=`Expectecd Price:-${d.expectedPrice}`
+                    h1=`Bargained Price:-${d.bargain.bargainedAmount}`
+                    if((d.from._id== idUser))
+                          form.aggrement
+                              span Aggrement
+                              input.box(rows="5" cols="7 " type="text" value=`
+                              THIS AGREEMENT made on this day of 2023, between ${d.to.name}(buyer) and
+                              ${d.from.name} incorporated under the Companies Act, 1956 and having its registered office at
+                              (hereinafter referred to as the SELLER, which expression shall, unless it be repugnant to the context or meaning thereof, be deemed to mean and include its successors and assigns) of the ONE PART and PQR (give name and description of the person or legal entity) (hereinafter referred to as the BUYER which expression shall, unless it be repugnant to the context or meaning thereof, be deemed to mean and include its successors and assigns) of the OTHER PART.` readOnly='' required=''  name='text' id='text1')
+                              input.box(type='text' style='color: black;' required='' value=`${d._id}` readOnly name="dealId" id="dealId")
+                              input.btn1(type='submit' value='ACCEPT DEAL' name='send')
+                    if((d.to._id==idUser) && (d.bargain.status==1) )
+                        h2 bargained successfull
+                        h4
+                          i.fas.fa-phone(style='font-size: medium; margin-right: 1rem; color: green;')
+                          a(href=`tel:${d.from.phone}`) Contact-Farmer
+script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
+script(src="/js/acceptBargain.js")
+
+    
