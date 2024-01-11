@@ -1,0 +1,21 @@
+doctype html
+html(lang='en')
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Weather App
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap', rel='stylesheet')
+    // Stylesheet
+    link(rel='stylesheet', href='/css/style1.css')
+  body(style="background:black;")
+    .wrapper
+      .shape.shape-1
+      .shape.shape-2
+      .container
+        .search-container
+          input#city(type='text', placeholder='Enter a city name', value='mumbai')
+          button#search-btn Search
+        #result
+    // Script
+    script(src='/js/key.js')
+    script(src='/js/script1.js')

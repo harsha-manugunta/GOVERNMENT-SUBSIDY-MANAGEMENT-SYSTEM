@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='stylesheet', href='/css/style3.css')
+    script(src='https://kit.fontawesome.com/3b5af9fed2.js', crossorigin='anonymous')
+  body
+    header Chat with Agro
+    section.main
+      .user-area
+        img(src='https://pngimg.com/uploads/farmer/farmer_PNG24.png')
+      .chatarea-main
+        .chatarea-outer
+          //
+            <div class="chatarea-inner user">Hello hi, how area you, i am good. What about you!</div>
+            <div class="chatarea-inner chatbot">Hello hi, how area you, i am good. What about you!</div>
+            <div class="chatarea-inner user">Hello hi, how area you, i am good. What about you!</div>
+      .chatbot-area
+        img(src='/images/application/robot.png')
+      button#mic
+        i.fa-duotone.fa-microphone
+    script(src='/js/chatBot.js')
