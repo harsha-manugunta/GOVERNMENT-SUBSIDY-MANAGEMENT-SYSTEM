@@ -1,0 +1,61 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Order Tracker
+    link(rel='stylesheet', href='/css/tracker.css')
+    link(rel='stylesheet', href='/css/style2.css')
+    // UniIcon CDN Link
+    link(rel='stylesheet', href='https://unicons.iconscout.com/release/v4.0.0/css/line.css')
+  body
+    .heading
+      span ORDER 
+      |  CONFIRMATION
+    .popup
+      img(src='404-tick.png')
+      h2 Thank You!
+      p Your Transaction has been sucessfully completed!
+      a(href='/')
+        button(type='button') OK
+    .main
+      .head
+        p.head_1
+          | Order: 
+          span=dealId
+        p.head_2
+          | Expected Arival: 
+          span 24/02/2023
+      ul
+        li
+          i.icon.uil.uil-clipboard-notes
+          .progress.one
+            p 1
+            i.uil.uil-check
+          p.text Order Processed
+        li
+          i.icon.uil.uil-parcel
+          .progress.two
+            p 2
+            i.uil.uil-check
+          p.text Order Shipped
+        li
+          i.icon.uil.uil-truck
+          .progress.three
+            p 3
+            i.uil.uil-check
+          p.text Order Enroute
+        li
+          i.icon.uil.uil-exchange
+          .progress.four
+            p 4
+            i.uil.uil-check
+          p.text Reached at nearest Hub
+        li
+          i.icon.uil.uil-map-marker
+          .progress.five
+            p 5
+            i.uil.uil-check
+          p.text Order Arrived
+    script(src='/js/main.js')
